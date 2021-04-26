@@ -31,6 +31,8 @@
               <u-lazy-load
                 threshold="-450"
                 border-radius="10"
+                :loading-img="loadingImg"
+                :error-img="errorImg"
                 :image="item.image"
                 :index="index"
               ></u-lazy-load>
@@ -65,6 +67,8 @@
                 border-radius="10"
                 :image="item.image"
                 :index="index"
+                :loading-img="loadingImg"
+                :error-img="errorImg"
               ></u-lazy-load>
               <view class="demo-title">
                 {{ item.title }}
@@ -134,6 +138,9 @@ export default class index extends Vue {
   // clear() {
   //   this.$refs.uWaterfall.clear();
   // }
+
+  loadingImg = "/static/loading.gif";
+  errorImg = "/static/load_error.png";
   keyword: string = "遥看瀑布挂前川";
 
   list2 = [
@@ -157,7 +164,7 @@ export default class index extends Vue {
       price: 35,
       title: "北国风光，千里冰封，万里雪飘",
       shop: "李白杜甫白居易旗舰店",
-      image: "https://cdn.uviewui.com/uview/swiper/1.jpg",
+      image: "https://cdn.uv222iewui.com/uview/swiper/1.jpg",
     },
     {
       price: 75,
