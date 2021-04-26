@@ -1,4 +1,4 @@
-# my-ts-uni
+# uniapp-ts
 
 ## Project setup
 ```
