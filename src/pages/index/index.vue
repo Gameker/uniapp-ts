@@ -47,13 +47,6 @@
               <view class="demo-shop">
                 {{ item.shop }}
               </view>
-              <u-icon
-                name="close-circle-fill"
-                color="#fa3534"
-                size="34"
-                class="u-close"
-                @click="remove(item.id)"
-              ></u-icon>
             </view>
           </template>
           <template v-slot:right="{ rightList }">
@@ -81,13 +74,6 @@
               <view class="demo-shop">
                 {{ item.shop }}
               </view>
-              <u-icon
-                name="close-circle-fill"
-                color="#fa3534"
-                size="34"
-                class="u-close"
-                @click="remove(item.id)"
-              ></u-icon>
             </view>
           </template>
         </u-waterfall>
@@ -132,12 +118,6 @@ export default class index extends Vue {
       this.flowList.push(item);
     }
   }
-  remove(id: number) {
-    (this.$refs.uWaterfall as any).remove(id);
-  }
-  // clear() {
-  //   this.$refs.uWaterfall.clear();
-  // }
 
   loadingImg = "/static/loading.gif";
   errorImg = "/static/load_error.png";
@@ -162,7 +142,8 @@ export default class index extends Vue {
   list = [
     {
       price: 35,
-      title: "北国风光，千里冰封，万里雪飘",
+      title:
+        "北国风光，千里冰封，万里雪飘北国风光，千里冰封，万里雪飘2222122222222222222222233111",
       shop: "李白杜甫白居易旗舰店",
       image: "https://cdn.uv222iewui.com/uview/swiper/1.jpg",
     },
@@ -284,6 +265,12 @@ page {
   font-size: 30rpx;
   margin-top: 5px;
   color: $u-main-color;
+  //多行文本溢出显示...
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .demo-tag {
@@ -326,5 +313,4 @@ page {
   color: $u-tips-color;
   margin-top: 5px;
 }
-</style>
 </style>
