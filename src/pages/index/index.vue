@@ -31,8 +31,8 @@
               <u-lazy-load
                 threshold="-450"
                 border-radius="10"
-                :loading-img="loadingImg"
-                :error-img="errorImg"
+                loading-img="/static/loading.gif"
+                error-img="/static/load_error.png"
                 :image="item.image"
                 :index="index"
               ></u-lazy-load>
@@ -60,8 +60,8 @@
                 border-radius="10"
                 :image="item.image"
                 :index="index"
-                :loading-img="loadingImg"
-                :error-img="errorImg"
+                loading-img="/static/loading.gif"
+                error-img="/static/load_error.png"
               ></u-lazy-load>
               <view class="demo-title">
                 {{ item.title }}
@@ -119,8 +119,8 @@ export default class index extends Vue {
     }
   }
 
-  loadingImg = "/static/loading.gif";
-  errorImg = "/static/load_error.png";
+  // loadingImg = "/static/loading.gif";
+  // errorImg = "/static/load_error.png";
   keyword: string = "遥看瀑布挂前川";
 
   list2 = [
