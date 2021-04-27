@@ -107,7 +107,6 @@ export default class index extends Vue {
     fontSize: "40rpx",
     color: "#F7889D",
   };
-  $u: any;
   onLoad() {
     this.addRandomData();
   }
@@ -293,7 +292,7 @@ page {
 }
 
 .demo-tag-owner {
-  background-color: $u-type-error;
+  background-color: #c27ef0;
   color: #ffffff;
   display: flex;
   align-items: center;
