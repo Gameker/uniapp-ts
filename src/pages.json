@@ -10,6 +10,18 @@
 				"navigationStyle": "custom", // 隐藏系统导航栏
 				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
 			}
+		},
+		{
+			"path": "pages/page1/index",
+			"style": {
+				"navigationBarTitleText": "工具"
+			}
+		},
+		{
+			"path": "pages/page2/index",
+			"style": {
+				"navigationBarTitleText": "模板"
+			}
 		}
 	],
 	"globalStyle": {
@@ -17,5 +29,30 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#909399",
+		"selectedColor": "#303133",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/uview/example/f.png",
+				"selectedIconPath": "static/uview/example/fl.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/page1/index",
+				"iconPath": "static/uview/example/g.png",
+				"selectedIconPath": "static/uview/example/gc.png",
+				"text": "女友圈"
+			},
+			{
+				"pagePath": "pages/page2/index",
+				"iconPath": "static/uview/example/h.png",
+				"selectedIconPath": "static/uview/example/hc.png",
+				"text": "我的"
+			}
+		]
 	}
 }
