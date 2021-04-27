@@ -6,7 +6,7 @@
         title-color="white"
         :is-back="false"
         :background="background"
-        title="剑未配妥，出门已是江湖"
+        title="女朋友管理系统"
       ></u-navbar>
     </view>
     <view class="main u-skeleton">
@@ -137,7 +137,7 @@ export default class index extends Vue {
 
   list2 = [
     {
-      image: "https://cdn.uviewui.com/uview/swiper/1.jpg",
+      image: "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2542710983,3406835393&fm=26&gp=0.jpg",
       title: "昨夜星辰昨夜风，画楼西畔桂堂东",
     },
     {
