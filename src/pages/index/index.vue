@@ -90,6 +90,11 @@
         bgColor="#FFF"
       ></u-skeleton>
     </view>
+    <u-back-top
+      :scroll-top="scrollTop"
+      :icon-style="iconStyle"
+      :duration="500"
+    ></u-back-top>
   </view>
 </template>
 
@@ -97,9 +102,17 @@
 import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class index extends Vue {
+  scrollTop: number = 0;
+  iconStyle = {
+    fontSize: "40rpx",
+    color: "#F7889D",
+  };
   $u: any;
   onLoad() {
     this.addRandomData();
+  }
+  onPageScroll(e: any) {
+    this.scrollTop = e.scrollTop;
   }
   onReachBottom() {
     this.loadStatus = "loading";
@@ -145,14 +158,15 @@ export default class index extends Vue {
       title:
         "北国风光，千里冰封，万里雪飘北国风光，千里冰封，万里雪飘2222122222222222222222233111",
       shop: "李白杜甫白居易旗舰店",
-      image: "https://cdn.uv222iewui.com/uview/swiper/1.jpg",
+      image:
+        "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1015613717,2953594052&fm=26&gp=0.jpg",
     },
     {
       price: 75,
       title: "望长城内外，惟余莽莽",
       shop: "李白杜甫白居易旗舰店",
       image:
-        "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3158103848,3930143469&fm=26&gp=0.jpg",
+        "https://ss1.bds1111tatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3158103848,3930143469&fm=26&gp=0.jpg",
     },
     {
       price: 385,
