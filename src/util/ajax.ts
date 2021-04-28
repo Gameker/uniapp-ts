@@ -1,14 +1,13 @@
 import Vue from 'vue';
 import * as base from '@/api/page1'
 
-
-
 export const ajax = {
     base: {
-        get: base.getSwiper,
+        getSwiper: base.getSwiper,
         reset: base.reset
     }
 }
+
 function loadProtocol(url: string, root: any) {
     for (const key in root) {
         const item = root[key];
@@ -26,8 +25,11 @@ function loadProtocol(url: string, root: any) {
         }
     }
 }
+
 loadProtocol('/api', ajax);
+
 Vue.prototype.$ajax = ajax;
+
 declare module 'vue/types/vue' {
     interface Vue {
         $ajax: typeof ajax;
