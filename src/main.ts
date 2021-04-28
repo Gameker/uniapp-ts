@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import '@/api/api'
+import '@/util/ajax'
 
 import uView from "uview-ui";
 Vue.use(uView);

@@ -12,7 +12,7 @@ import { Component, Vue } from "vue-property-decorator";
 export default class index extends Vue {
   title: string = "Hello";
   async getSwiper() {
-    const res = await this.$ajax.base.get();
+    const res = await this.$ajax.base.get({key:'111'}, 'get');
     console.log(res, 222);
   }
   onShow() {

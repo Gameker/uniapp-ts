@@ -1,11 +1,12 @@
 import Vue from 'vue';
-import { getSwiper } from '../util/http'
+import * as base from '@/api/page1'
 
 
 
 export const ajax = {
     base: {
-        get: getSwiper
+        get: base.getSwiper,
+        reset: base.reset
     }
 }
 function loadProtocol(url: string, root: any) {

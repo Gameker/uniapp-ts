@@ -1,9 +1,9 @@
 
-const BASE_URL = "http://localhost:8082"; //开发时使用本地接口，在上线时只需要修改此处接口为线上地址即可
+const BASE_URL = "http://localhost:8080"; //开发时使用本地接口，在上线时只需要修改此处接口为线上地址即可
 
 interface Args {
-    url?: string
     method?: any
+    url?: string
     data?: any
     dataType?: string
     header?: any
@@ -33,9 +33,4 @@ export const myRequest = (options: Args) => { //传入的options是一个json对
             }
         })
     })
-}
-
-export const getSwiper = async (url?: string) => {
-    const res = await myRequest({ url });
-    console.log(res, 222);
 }
