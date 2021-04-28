@@ -1,6 +1,4 @@
-import { myRequest } from '../util/http'
-
-
+import { myRequest } from '@/util/http'
 
 export const getSwiper = async (data: any, method: string, url?: string) => {
     const res = await myRequest({ data, method, url });
@@ -9,7 +7,7 @@ export const getSwiper = async (data: any, method: string, url?: string) => {
 
 /** 重置登录超时退出时间 */
 export async function reset(url?: string) {
-    const res:any = await myRequest({url});
-    if (res.code !== 200) { throw res; }
+    const res: any = await myRequest({ url });
+    if (res.code == 200) { throw res; }
     return res.data;
 }
