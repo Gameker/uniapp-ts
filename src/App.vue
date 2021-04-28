@@ -1,17 +1,27 @@
 <script lang="ts">
-import Vue from "vue"
+import Vue from "vue";
 export default Vue.extend({
   mpType: "app",
   onLaunch() {
-    console.log("App Launch")
+    console.log("App Launch");
+    document.addEventListener("keydown", async (e: KeyboardEvent) => {
+      if (e) {
+        await this.$ajax.base.reset();
+      }
+    });
+    document.addEventListener("click", async (e) => {
+      if (e) {
+        await this.$ajax.base.reset();
+      }
+    });
   },
   onShow() {
-    console.log("App Show")
+    console.log("App Show");
   },
   onHide() {
-    console.log("App Hide")
+    console.log("App Hide");
   },
-})
+});
 </script>
 
 <style lang="scss">
