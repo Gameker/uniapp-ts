@@ -2,16 +2,22 @@
   <view class="content">
     <view class="header">
       <u-navbar
+        :border-bottom="false"
         height="50"
         title-color="white"
         :is-back="false"
         :background="background"
         title="女朋友管理系统"
-      ></u-navbar>
+      >
+      </u-navbar>
+      <view style="padding: 15px 20px">
+        <u-search action-text="搜索"></u-search>
+      </view>
     </view>
     <view class="main u-skeleton">
-      <view style="padding: 25px 25px 0 25px">
+      <view style="padding: 20px 15px 6px 15px">
         <u-swiper
+          height="350"
           :list="list2"
           indicator-pos="topRight"
           :title="true"
@@ -99,7 +105,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator"
 @Component
 export default class index extends Vue {
   scrollTop: number = 0;
@@ -108,32 +114,32 @@ export default class index extends Vue {
     color: "#F7889D",
   };
   onLoad() {
-    this.addRandomData();
+    this.addRandomData()
   }
   onPageScroll(e: any) {
     this.scrollTop = e.scrollTop;
   }
   onReachBottom() {
-    this.loadStatus = "loading";
+    this.loadStatus = "loading"
     // 模拟数据加载
     setTimeout(() => {
-      this.addRandomData();
-      this.loadStatus = "loadmore";
-    }, 1000);
+      this.addRandomData()
+      this.loadStatus = "loadmore"
+    }, 1000)
   }
   addRandomData() {
     for (let i = 0; i < 10; i++) {
-      let index = this.$u.random(0, this.list.length - 1);
+      let index = this.$u.random(0, this.list.length - 1)
       // 先转成字符串再转成对象，避免数组对象引用导致数据混乱
-      let item = JSON.parse(JSON.stringify(this.list[index]));
-      item.id = this.$u.guid();
-      this.flowList.push(item);
+      let item = JSON.parse(JSON.stringify(this.list[index]))
+      item.id = this.$u.guid()
+      this.flowList.push(item)
     }
   }
 
   // loadingImg = "/static/loading.gif";
   // errorImg = "/static/load_error.png";
-  keyword: string = "遥看瀑布挂前川";
+  keyword: string = "遥看瀑布挂前川"
 
   list2 = [
     {
@@ -148,9 +154,9 @@ export default class index extends Vue {
       image: "https://cdn.uviewui.com/uview/swiper/3.jpg",
       title: "谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳",
     },
-  ];
-  loadStatus = "loadmore";
-  flowList: any = [];
+  ]
+  loadStatus = "loadmore"
+  flowList: any = []
   list = [
     {
       price: 35,
@@ -230,7 +236,7 @@ export default class index extends Vue {
       image:
         "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=405276296,856841904&fm=26&gp=0.jpg",
     },
-  ];
+  ]
   background: any = {
     // backgroundColor: "#001f3f",
     // 导航栏背景图
@@ -240,7 +246,7 @@ export default class index extends Vue {
 
     // 渐变色
     backgroundImage: "linear-gradient(-90deg,#a050d7 0,#f7889c 100%)",
-  };
+  }
 }
 </script>
 
@@ -252,9 +258,12 @@ page {
 </style>
 <style lang="scss" scoped>
 .wrap {
-  padding: 40rpx;
+  padding: 18rpx;
 }
 
+.header {
+  background: linear-gradient(-90deg, #a050d7 0, #f7889c 100%);
+}
 .demo-warter {
   border-radius: 8px;
   margin: 5px;
