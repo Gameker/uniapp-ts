@@ -1,11 +1,22 @@
 import Vue from 'vue';
-import * as base from '@/api/page1'
+import * as index from '@/api/index'
+import * as girls from '@/api/girls'
+import * as center from '@/api/girls'
 
 export const ajax = {
-    base: {
-        getSwiper: base.getSwiper,
-        reset: base.reset
-    }
+    index: {
+        getSwiper: index.getSwiper,
+        reset: index.reset
+    },
+    girls: {
+        getSwiper: girls.getSwiper,
+        reset: girls.reset
+    },
+    center: {
+        getSwiper: center.getSwiper,
+        reset: center.reset
+    },
+
 }
 
 function loadProtocol(url: string, root: any) {

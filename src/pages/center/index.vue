@@ -16,7 +16,7 @@ import Header from "@/components/header.vue";
 export default class index extends Vue {
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
-    title: "女友圈",
+    title: "个人中心",
   };
 
   async getSwiper() {
@@ -24,7 +24,7 @@ export default class index extends Vue {
       KeyboardEvent: "1111",
       dataType: "json",
     };
-    const res = await this.$ajax.base.getSwiper({ ...params });
+    const res = await this.$ajax.center.getSwiper({ ...params });
     console.log(res, 222);
   }
   //onLoad事件
