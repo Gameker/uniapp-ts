@@ -2,7 +2,8 @@ import * as http from '@/util/http'
 
 export const getSwiper = async (data: any, url?: string) => {
     const res = await http.post(url!, data);
-    console.log(res, 222);
+    return res
+    // console.log(res, 222);
 }
 
 /** 重置登录超时退出时间 */

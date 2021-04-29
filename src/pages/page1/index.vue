@@ -14,7 +14,6 @@ export default class index extends Vue {
   async getSwiper() {
     let params = {
       KeyboardEvent: "1111",
-      method: "put",
       dataType: "json",
     };
     const res = await this.$ajax.base.getSwiper({ ...params });
