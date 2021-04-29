@@ -1,16 +1,35 @@
 <template>
   <view class="content">
-    <view>
-      <text class="title">{{ title }}</text>
+    <!-- 头部 -->
+    <view class="header">
+      <Header :options="options"></Header>
     </view>
+    <!-- 内容 -->
+    <view class="main"></view>
   </view>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-@Component
+import Header from "@/components/header.vue";
+@Component({ components: { Header } })
 export default class index extends Vue {
-  title: string = "Hello";
+  options: any = {
+    title: "女友圈",
+    title_color: "white",
+    height: 50,
+    background: {
+      // backgroundColor: "#001f3f",
+      // 导航栏背景图
+      // background: "url(https://cdn.uviewui.com/uview/swiper/1.jpg) no-repeat",
+      // // 还可以设置背景图size属性
+      // backgroundSize: "cover",
+
+      // 渐变色
+      backgroundImage: "linear-gradient(-90deg,#a050d7 0,#f7889c 100%)",
+    },
+  };
+
   async getSwiper() {
     let params = {
       KeyboardEvent: "1111",
@@ -20,32 +39,10 @@ export default class index extends Vue {
     console.log(res, 222);
   }
   onShow() {
-    this.getSwiper();
+    // this.getSwiper();
   }
 }
 </script>
 
 <style>
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin: 200rpx auto 50rpx auto;
-}
-
-.text-area {
-  display: flex;
-  justify-content: center;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
-}
 </style>

@@ -14,13 +14,16 @@
 		{
 			"path": "pages/page1/index",
 			"style": {
-				"navigationBarTitleText": "工具"
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+
 			}
 		},
 		{
 			"path": "pages/page2/index",
 			"style": {
-				"navigationBarTitleText": "模板"
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
 			}
 		}
 	],
