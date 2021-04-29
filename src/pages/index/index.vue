@@ -107,42 +107,20 @@ import { Component, Vue } from "vue-property-decorator";
 import Header from "@/components/header.vue";
 @Component({ components: { Header } })
 export default class index extends Vue {
+  //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
     title: "女友管理程序",
   };
+  //返回顶部相关的参数和方法
   scrollTop: number = 0;
   iconStyle = {
     fontSize: "40rpx",
     color: "#F7889D",
   };
-  onLoad() {
-    this.addRandomData();
-  }
   onPageScroll(e: any) {
     this.scrollTop = e.scrollTop;
   }
-  onReachBottom() {
-    this.loadStatus = "loading";
-    // 模拟数据加载
-    setTimeout(() => {
-      this.addRandomData();
-      this.loadStatus = "loadmore";
-    }, 1000);
-  }
-  addRandomData() {
-    for (let i = 0; i < 10; i++) {
-      let index = this.$u.random(0, this.list.length - 1);
-      // 先转成字符串再转成对象，避免数组对象引用导致数据混乱
-      let item = JSON.parse(JSON.stringify(this.list[index]));
-      item.id = this.$u.guid();
-      this.flowList.push(item);
-    }
-  }
-
-  // loadingImg = "/static/loading.gif";
-  // errorImg = "/static/load_error.png";
-  keyword: string = "遥看瀑布挂前川";
-
+  //轮播图参数
   list2 = [
     {
       image:
@@ -158,6 +136,7 @@ export default class index extends Vue {
       title: "谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳",
     },
   ];
+  //以下是瀑布流相关参数和方法
   loadStatus = "loadmore";
   flowList: any = [];
   list = [
@@ -240,16 +219,27 @@ export default class index extends Vue {
         "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=405276296,856841904&fm=26&gp=0.jpg",
     },
   ];
-  background: any = {
-    // backgroundColor: "#001f3f",
-    // 导航栏背景图
-    // background: "url(https://cdn.uviewui.com/uview/swiper/1.jpg) no-repeat",
-    // // 还可以设置背景图size属性
-    // backgroundSize: "cover",
-
-    // 渐变色
-    backgroundImage: "linear-gradient(-90deg,#a050d7 0,#f7889c 100%)",
-  };
+  onReachBottom() {
+    this.loadStatus = "loading";
+    // 模拟数据加载
+    setTimeout(() => {
+      this.addRandomData();
+      this.loadStatus = "loadmore";
+    }, 1000);
+  }
+  addRandomData() {
+    for (let i = 0; i < 10; i++) {
+      let index = this.$u.random(0, this.list.length - 1);
+      // 先转成字符串再转成对象，避免数组对象引用导致数据混乱
+      let item = JSON.parse(JSON.stringify(this.list[index]));
+      item.id = this.$u.guid();
+      this.flowList.push(item);
+    }
+  }
+  //onLoad事件
+  onLoad() {
+    this.addRandomData();
+  }
 }
 </script>
 
@@ -261,30 +251,20 @@ page {
 </style>
 
 <style lang="scss" scoped>
+.header {
+  background: linear-gradient(-90deg, #a050d7 0, #f7889c 100%);
+}
+
 .wrap {
   padding: 18rpx;
 }
 
-.header {
-  background: linear-gradient(-90deg, #a050d7 0, #f7889c 100%);
-}
 .demo-warter {
   border-radius: 8px;
   margin: 5px;
   background-color: #ffffff;
   padding: 8px;
   position: relative;
-}
-
-.u-close {
-  position: absolute;
-  top: 32rpx;
-  right: 32rpx;
-}
-
-.demo-image {
-  width: 100%;
-  border-radius: 4px;
 }
 
 .demo-title {
