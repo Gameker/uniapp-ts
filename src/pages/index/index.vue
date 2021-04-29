@@ -235,6 +235,13 @@ export default class index extends Vue {
   onLoad() {
     this.addRandomData();
   }
+  onPullDownRefresh() {
+    console.log("refresh");
+    setTimeout(function () {
+      uni.reLaunch({ url: "/pages/index/index" });
+      uni.stopPullDownRefresh();
+    }, 500);
+  }
 }
 </script>
 
