@@ -11,18 +11,18 @@
       </Header>
     </view>
     <!-- 内容 -->
-    <view class="main u-skeleton">
+    <view class="main">
+      <!-- 轮播图 -->
       <view style="padding: 20px 15px 6px 15px">
         <u-swiper
           height="350"
           :list="list2"
           indicator-pos="topRight"
           :title="true"
-          class="u-skeleton-rect"
         ></u-swiper>
       </view>
+      <!-- 瀑布流 -->
       <view class="wrap">
-        <!-- <u-button @click="clear">清空列表</u-button> -->
         <u-waterfall v-model="flowList" ref="uWaterfall">
           <template v-slot:left="{ leftList }">
             <view
@@ -80,18 +80,13 @@
             </view>
           </template>
         </u-waterfall>
+        <!-- 加载更多 -->
         <u-loadmore
           bg-color="rgb(240, 240, 240)"
           :status="loadStatus"
           @loadmore="addRandomData"
         ></u-loadmore>
       </view>
-      <!--引用组件 骨架屏-->
-      <u-skeleton
-        :loading="false"
-        :animation="true"
-        bgColor="#FFF"
-      ></u-skeleton>
     </view>
     <!-- 返回顶部 -->
     <u-back-top
