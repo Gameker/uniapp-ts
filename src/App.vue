@@ -4,16 +4,16 @@ export default Vue.extend({
   mpType: "app",
   onLaunch() {
     console.log("App Launch");
-    document.addEventListener("keydown", async (e: KeyboardEvent) => {
-      if (e) {
-        await this.$ajax.base.reset();
-      }
-    });
-    document.addEventListener("click", async (e) => {
-      if (e) {
-        await this.$ajax.base.reset();
-      }
-    });
+    // document.addEventListener("keydown", async (e: KeyboardEvent) => {
+    //   if (e) {
+    //     await this.$ajax.base.reset();
+    //   }
+    // });
+    // document.addEventListener("click", async (e) => {
+    //   if (e) {
+    //     await this.$ajax.base.reset();
+    //   }
+    // });
   },
   onShow() {
     console.log("App Show");

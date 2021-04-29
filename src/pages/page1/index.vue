@@ -14,20 +14,9 @@ import { Component, Vue } from "vue-property-decorator";
 import Header from "@/components/header.vue";
 @Component({ components: { Header } })
 export default class index extends Vue {
+  //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
     title: "女友圈",
-    title_color: "white",
-    height: 50,
-    background: {
-      // backgroundColor: "#001f3f",
-      // 导航栏背景图
-      // background: "url(https://cdn.uviewui.com/uview/swiper/1.jpg) no-repeat",
-      // // 还可以设置背景图size属性
-      // backgroundSize: "cover",
-
-      // 渐变色
-      backgroundImage: "linear-gradient(-90deg,#a050d7 0,#f7889c 100%)",
-    },
   };
 
   async getSwiper() {
@@ -38,8 +27,9 @@ export default class index extends Vue {
     const res = await this.$ajax.base.getSwiper({ ...params });
     console.log(res, 222);
   }
+  //onLoad事件
   onShow() {
-    // this.getSwiper();
+    this.getSwiper();
   }
 }
 </script>
