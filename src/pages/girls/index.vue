@@ -5,18 +5,23 @@
       <Header :options="options"></Header>
     </view>
     <!-- 内容 -->
-    <view class="main"></view>
+    <view class="main">
+      <Nyq></Nyq>
+    </view>
   </view>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Header from "@/components/header.vue";
-@Component({ components: { Header } })
+import Nyq from "@/components/nyq.vue";
+
+@Component({ components: { Header, Nyq } })
 export default class index extends Vue {
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
     title: "女友圈",
+    slotRight: true,
   };
 
   async getSwiper() {

@@ -1,6 +1,7 @@
 <template>
   <view class="content">
     <u-navbar
+      :slot="right"
       :border-bottom="false"
       :height="options.height || '50'"
       :title-color="options.color || 'white'"
@@ -8,6 +9,11 @@
       :background="options.background || background"
       :title="options.title"
     >
+      <view class="navbar-right" slot="right" v-if="options.slotRight">
+        <view style="margin: 5px 12px 0 0">
+          <u-icon name="camera" color="white" size="60"></u-icon>
+        </view>
+      </view>
     </u-navbar>
     <slot name="query"></slot>
   </view>
