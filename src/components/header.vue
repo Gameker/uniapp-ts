@@ -1,7 +1,7 @@
 <template>
   <view class="content">
     <u-navbar
-      :border-bottom="false"
+      :border-bottom="options.border||false"
       :height="options.height || '50'"
       :title-color="options.color || 'white'"
       :is-back="false"

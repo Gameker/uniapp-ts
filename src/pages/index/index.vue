@@ -4,8 +4,17 @@
     <view class="header">
       <Header :options="options">
         <template #query>
-          <view style="padding: 15px 20px">
-            <u-search action-text="搜索"></u-search>
+          <view style="padding: 6px">
+            <!-- <u-search action-text="搜索"></u-search> -->
+            <u-tabs
+              inactive-color="white"
+              active-color="black"
+              :list="listt"
+              :is-scroll="false"
+              :current="current"
+              bg-color="inherit"
+              @change="change"
+            ></u-tabs>
           </view>
         </template>
       </Header>
@@ -39,17 +48,18 @@
                 :image="item.image"
                 :index="index"
               ></u-lazy-load>
-              <view class="demo-title">
+              <!-- <view class="demo-title">
                 {{ item.title }}
               </view>
-              <view class="demo-price"> {{ item.price }}元 </view>
-              <view class="demo-tag">
+              <view class="demo-price"> {{ item.price }}元 </view> -->
+              <!-- <view class="demo-tag">
+                <u-tag text="雪夜" size='mini' mode="dark" shape="circle"/>
                 <view class="demo-tag-owner"> 自营 </view>
                 <view class="demo-tag-text"> 放心购 </view>
-              </view>
-              <view class="demo-shop">
+              </view> -->
+              <!-- <view class="demo-shop">
                 {{ item.shop }}
-              </view>
+              </view> -->
             </view>
           </template>
           <template v-slot:right="{ rightList }">
@@ -66,7 +76,7 @@
                 loading-img="/static/loading.gif"
                 error-img="/static/load_error.png"
               ></u-lazy-load>
-              <view class="demo-title">
+              <!-- <view class="demo-title">
                 {{ item.title }}
               </view>
               <view class="demo-price"> {{ item.price }}元 </view>
@@ -76,7 +86,7 @@
               </view>
               <view class="demo-shop">
                 {{ item.shop }}
-              </view>
+              </view> -->
             </view>
           </template>
         </u-waterfall>
@@ -105,6 +115,7 @@ export default class index extends Vue {
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
     title: "女友管理系统",
+    // border: true,
   };
   //返回顶部相关的参数和方法
   scrollTop: number = 0;
@@ -115,6 +126,27 @@ export default class index extends Vue {
   onPageScroll(e: any) {
     this.scrollTop = e.scrollTop;
   }
+  listt: any = [
+    {
+      name: "推荐",
+    },
+    {
+      name: "萝莉",
+    },
+    {
+      name: "富婆",
+    },
+    {
+      name: "大学生",
+    },
+    {
+      name: "模特",
+    },
+  ];
+  change(index: number) {
+    this.current = index;
+  }
+  current = 0;
   //轮播图参数
   list2 = [
     {
