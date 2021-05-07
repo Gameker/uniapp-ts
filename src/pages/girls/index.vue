@@ -29,7 +29,7 @@ export default class index extends Vue {
       KeyboardEvent: "1111",
       dataType: "json",
     };
-    const res = await this.$ajax.girls.getSwiper({ ...params });
+    const res = await this.$ajax.girls.getSwiper(params);
     console.log(res, 222);
   }
   //onLoad事件

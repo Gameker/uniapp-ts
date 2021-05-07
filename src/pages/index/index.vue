@@ -8,7 +8,7 @@
             <!-- <u-search action-text="搜索"></u-search> -->
             <u-tabs
               inactive-color="white"
-              active-color="black"
+              active-color="#8A2BE2"
               :list="listt"
               :is-scroll="false"
               :current="current"

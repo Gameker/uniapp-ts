@@ -69,7 +69,7 @@ export const post = (url: string, arg?: Args) => {
     return new Promise((resolve, reject) => {
         uni.request({
             url: BASE_URL + url,
-            method: arg?.method || "get",
+            method: arg?.method || "POST",
             data: arg || {},
             header: arg?.header,
             timeout: arg?.timeout || 6000,
