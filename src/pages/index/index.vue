@@ -41,7 +41,7 @@
               @tap="previewImage(item.url)"
             >
               <u-lazy-load
-                threshold="-270"
+                threshold="-100"
                 border-radius="10"
                 loading-img="/static/loading.gif"
                 error-img="/static/load_error.png"
@@ -60,7 +60,7 @@
               @tap="previewImage(item.url)"
             >
               <u-lazy-load
-                threshold="-270"
+                threshold="-100"
                 border-radius="10"
                 :image="item.url"
                 :index="index"
@@ -166,20 +166,25 @@ export default class index extends Vue {
     });
   }
   // =======================================================
-  index = 1;
+  index: number = 1;
   //获取首页数据接口
   async getData() {
+    let that = this;
+    const that_index = that.index;
     const res: any = await this.$ajax.index.getData({
       page: { index: this.index },
     });
+    //解决数组连接问题
     if (res != null && res.data.length > 0) {
-      this.flowList = this.flowList.concat(res.data);
-      this.index++;
+      if (that_index == this.index) {
+        this.flowList = this.flowList.concat(res.data);
+        this.index++;
+      } else {
+        this.index = that_index + 1;
+      }
     } else {
       this.loadStatus = "nomore";
     }
-    // this.flowList = res.data;
-    console.log(this.flowList);
   }
   onReachBottom() {
     this.loadStatus = "loading";
