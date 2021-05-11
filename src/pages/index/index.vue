@@ -38,6 +38,7 @@
               class="demo-warter"
               v-for="(item, index) in leftList"
               :key="index"
+              @tap="previewImage(item.url)"
             >
               <u-lazy-load
                 threshold="-270"
@@ -56,6 +57,7 @@
               class="demo-warter"
               v-for="(item, index) in rightList"
               :key="index"
+              @tap="previewImage(item.url)"
             >
               <u-lazy-load
                 threshold="-270"
@@ -98,15 +100,20 @@ export default class index extends Vue {
     title: "管理系统",
     // border: true,
   };
+  // =======================================================
   //返回顶部相关的参数和方法
   scrollTop: number = 0;
+  //返回顶部样式自定义
   iconStyle = {
     fontSize: "40rpx",
     color: "#F7889D",
   };
+  //返回顶部
   onPageScroll(e: any) {
     this.scrollTop = e.scrollTop;
   }
+  // =======================================================
+  //头部标签栏数据
   listt: any = [
     {
       name: "推荐",
@@ -124,10 +131,13 @@ export default class index extends Vue {
       name: "模特",
     },
   ];
+  // 标签栏当前值默认第一项：0
+  current = 0;
+  //标签栏切换触发事件
   change(index: number) {
     this.current = index;
   }
-  current = 0;
+  // =======================================================
   //轮播图参数
   list2 = [
     // {
@@ -144,13 +154,31 @@ export default class index extends Vue {
       title: "谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳",
     },
   ];
+  // =======================================================
   //以下是瀑布流相关参数和方法
   loadStatus = "loadmore";
   flowList: any = [];
   list: any = [];
+  addRandomData() {
+    for (let i = 0; i < 10; i++) {
+      let index = this.$u.random(0, this.list.length - 1);
+      // 先转成字符串再转成对象，避免数组对象引用导致数据混乱
+      let item = JSON.parse(JSON.stringify(this.list[index]));
+      item.id = this.$u.guid();
+      this.flowList.push(item);
+    }
+  }
+  // =======================================================
+  //预览图片
+  previewImage(url: string) {
+    uni.previewImage({
+      urls: [url],
+    });
+  }
+  // =======================================================
+  //获取首页数据接口
   async getData() {
     const res: any = await this.$ajax.index.getData();
-    // console.log(res)
     this.flowList = res.data;
   }
   onReachBottom() {
@@ -161,26 +189,20 @@ export default class index extends Vue {
       this.loadStatus = "loadmore";
     }, 700);
   }
-  addRandomData() {
-    for (let i = 0; i < 10; i++) {
-      let index = this.$u.random(0, this.list.length - 1);
-      // 先转成字符串再转成对象，避免数组对象引用导致数据混乱
-      let item = JSON.parse(JSON.stringify(this.list[index]));
-      item.id = this.$u.guid();
-      this.flowList.push(item);
-    }
-  }
+  // =======================================================
   //onLoad事件
   onLoad() {
     this.getData();
     // this.addRandomData();
   }
+  // =======================================================
+  //下拉刷新
   onPullDownRefresh() {
     console.log("refresh");
     setTimeout(function () {
       uni.reLaunch({ url: "/pages/index/index" });
       uni.stopPullDownRefresh();
-    }, 500);
+    }, 567);
   }
 }
 </script>
