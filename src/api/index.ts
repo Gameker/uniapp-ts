@@ -1,7 +1,7 @@
 import * as http from '@/util/http'
 
-export const getSwiper = async (data: any, url?: string) => {
-    const res = await http.post(url!, data);
+export const getData = async (url?: string) => {
+    const res = await http.post(url!)
     return res
 }
 

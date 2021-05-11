@@ -5,7 +5,7 @@ import * as center from '@/api/girls'
 
 export const ajax = {
     index: {
-        getSwiper: index.getSwiper,
+        getData: index.getData,
         reset: index.reset
     },
     girls: {
