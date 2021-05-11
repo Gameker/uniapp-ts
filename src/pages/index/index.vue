@@ -39,7 +39,6 @@
               v-for="(item, index) in leftList"
               :key="index"
             >
-              <!-- 警告：微信小程序中需要hx2.8.11版本才支持在template中结合其他组件，比如下方的lazy-load组件 -->
               <u-lazy-load
                 threshold="-270"
                 border-radius="10"
@@ -48,16 +47,8 @@
                 :image="item.url"
                 :index="index"
               ></u-lazy-load>
-
-              <view class="demo-tag">
-                <u-tag
-                  bg-color="#a050d7"
-                  text="御姐"
-                  size="mini"
-                  mode="dark"
-                  shape="circleRight"
-                />
-              </view>
+              <!-- 左上角标签 -->
+              <view class="demo-tag"><Tag :type="item.type" /></view>
             </view>
           </template>
           <template v-slot:right="{ rightList }">
@@ -74,15 +65,8 @@
                 loading-img="/static/loading.gif"
                 error-img="/static/load_error.png"
               ></u-lazy-load>
-              <view class="demo-tag">
-                <u-tag
-                  bg-color="#f7889c"
-                  text="御姐"
-                  size="mini"
-                  mode="dark"
-                  shape="circleRight"
-                />
-              </view>
+              <!-- 左上角标签 -->
+              <view class="demo-tag"><Tag :type="item.type" /></view>
             </view>
           </template>
         </u-waterfall>
@@ -106,7 +90,8 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Header from "@/components/header.vue";
-@Component({ components: { Header } })
+import Tag from "@/components/tag.vue";
+@Component({ components: { Header, Tag } })
 export default class index extends Vue {
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
@@ -133,7 +118,7 @@ export default class index extends Vue {
       name: "富婆",
     },
     {
-      name: "大学生",
+      name: "学生",
     },
     {
       name: "模特",
