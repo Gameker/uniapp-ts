@@ -11,44 +11,44 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator"
 enum Color {
-  YJ = "#a050d7",
-  LL = "pink",
-  DXS = "#a05077",
-  MT = "red",
+  YJ = "rgba(244,244, 245, 0.3)",
+  LL = "rgba(244,244, 245, 0.3)",
+  DXS = "rgba(244,244, 245, 0.3)",
+  MT = "rgba(244,244, 245, 0.3)",
 }
 @Component
 export default class index extends Vue {
-  @Prop({ type: Number, default: () => 0 }) type!: number;
+  @Prop({ type: Number, default: () => 0 }) type!: number
 
   get Bgcolor() {
     switch (this.type) {
       case 1:
-        return Color.YJ;
+        return Color.YJ
       case 2:
-        return Color.LL;
+        return Color.LL
       case 3:
-        return Color.DXS;
+        return Color.DXS
       case 4:
-        return Color.MT;
+        return Color.MT
       default:
-        return "black";
+        return "rgba(0,0, 0, 0.3)"
     }
   }
 
   get typeName() {
     switch (this.type) {
       case 1:
-        return "御姐";
+        return "白皙幼滑"
       case 2:
-        return "萝莉";
+        return "萝莉"
       case 3:
-        return "学生";
+        return "白皙幼滑"
       case 4:
-        return "模特";
+        return "模特"
       default:
-        return "其他";
+        return "其他"
     }
   }
 }
