@@ -5,8 +5,20 @@
       <Header :options="options">
         <template #query>
           <view style="padding: 6px">
-            <!-- <u-search action-text="搜索"></u-search> -->
-            <u-tabs
+            <view class="">
+              <u-input
+                v-model="value"
+                :type="type"
+                :border="border"
+                @click="show = true"
+              />
+              <u-action-sheet
+                :list="actionSheetList"
+                v-model="show"
+                @click="actionSheetCallback"
+              ></u-action-sheet>
+            </view>
+            <!-- <u-tabs
               inactive-color="white"
               active-color="#8A2BE2"
               :list="listt"
@@ -14,7 +26,7 @@
               :current="current"
               bg-color="inherit"
               @change="change"
-            ></u-tabs>
+            ></u-tabs> -->
           </view>
         </template>
       </Header>
@@ -90,27 +102,46 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator"
-import Header from "@/components/header.vue"
-import Tag from "@/components/tag.vue"
+import { Component, Vue } from "vue-property-decorator";
+import Header from "@/components/header.vue";
+import Tag from "@/components/tag.vue";
 @Component({ components: { Header, Tag } })
 export default class index extends Vue {
+  value = "";
+  type = "select";
+  show = false;
+  border = true;
+  actionSheetList = [
+    {
+      text: "男",
+    },
+    {
+      text: "女",
+    },
+    {
+      text: "保密",
+    },
+  ];
+  actionSheetCallback(index: any) {
+    this.value = this.actionSheetList[index].text;
+  }
+
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
-    title: "管理系统",
+    title: "专辑 每日更新",
     // border: true,
-  }
+  };
   // =======================================================
   //返回顶部相关的参数和方法
-  scrollTop: number = 0
+  scrollTop: number = 0;
   //返回顶部样式自定义
   iconStyle = {
     fontSize: "40rpx",
     color: "#FE4365",
-  }
+  };
   //返回顶部
   onPageScroll(e: any) {
-    this.scrollTop = e.scrollTop
+    this.scrollTop = e.scrollTop;
   }
   // =======================================================
   //头部标签栏数据
@@ -130,12 +161,12 @@ export default class index extends Vue {
     {
       name: "模特",
     },
-  ]
+  ];
   // 标签栏当前值默认第一项：0
-  current = 0
+  current = 0;
   //标签栏切换触发事件
   change(index: number) {
-    this.current = index
+    this.current = index;
   }
   // =======================================================
   //轮播图参数
@@ -153,60 +184,60 @@ export default class index extends Vue {
       image: "https://cdn.uviewui.com/uview/swiper/3.jpg",
       title: "谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳",
     },
-  ]
+  ];
   // =======================================================
   //以下是瀑布流相关参数和方法
-  loadStatus = "loading"
-  flowList: any = []
-  list: any = []
+  loadStatus = "loading";
+  flowList: any = [];
+  list: any = [];
   // =======================================================
   //预览图片
   previewImage(url: string) {
     uni.previewImage({
       urls: [url],
-    })
+    });
   }
   // =======================================================
-  index: number = 1
+  index: number = 1;
   //获取首页数据接口
   async getData() {
-    let that = this
-    const that_index = that.index
+    let that = this;
+    const that_index = that.index;
     const res: any = await this.$ajax.index.getData({
       page: { index: this.index },
-    })
+    });
     //解决数组连接问题
     if (res != null && res.data.length > 0) {
       if (that_index == this.index) {
-        this.flowList = this.flowList.concat(res.data)
-        this.index++
+        this.flowList = this.flowList.concat(res.data);
+        this.index++;
       } else {
-        this.index = that_index + 1
+        this.index = that_index + 1;
       }
     } else {
-      this.loadStatus = "nomore"
+      this.loadStatus = "nomore";
     }
   }
   onReachBottom() {
-    this.loadStatus = "loading"
+    this.loadStatus = "loading";
     // 模拟数据加载
     setTimeout(() => {
-      this.getData()
-    }, 1000)
+      this.getData();
+    }, 1000);
   }
   // =======================================================
   //onLoad事件
   onLoad() {
-    this.getData()
+    this.getData();
   }
   // =======================================================
   //下拉刷新
   onPullDownRefresh() {
-    console.log("refresh")
+    console.log("refresh");
     setTimeout(function () {
-      uni.reLaunch({ url: "/pages/index/index" })
-      uni.stopPullDownRefresh()
-    }, 567)
+      uni.reLaunch({ url: "/pages/index/index" });
+      uni.stopPullDownRefresh();
+    }, 567);
   }
 }
 </script>

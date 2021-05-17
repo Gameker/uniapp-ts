@@ -6,7 +6,7 @@
     </view>
     <!-- 内容 -->
     <view class="main">
-      <Nyq></Nyq>
+  
     </view>
   </view>
 </template>
@@ -14,14 +14,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Header from "@/components/header.vue";
-import Nyq from "@/components/nyq.vue";
 
-@Component({ components: { Header, Nyq } })
+@Component({ components: { Header} })
 export default class index extends Vue {
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
-    title: "女友圈",
-    slotRight: true,
+    title: "女友圈"
   };
 
   async getSwiper() {

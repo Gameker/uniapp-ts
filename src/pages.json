@@ -41,15 +41,15 @@
 		"borderStyle": "black",
 		"list": [{
 				"pagePath": "pages/index/index",
-				"iconPath": "static/uview/example/f.png",
-				"selectedIconPath": "static/uview/example/fl.png",
+				"iconPath": "static/uview/example/ho.png",
+				"selectedIconPath": "static/uview/example/hoc.png",
 				"text": "首页"
 			},
 			{
 				"pagePath": "pages/girls/index",
-				"iconPath": "static/uview/example/g.png",
-				"selectedIconPath": "static/uview/example/gc.png",
-				"text": "女友圈"
+				"iconPath": "static/uview/example/f.png",
+				"selectedIconPath": "static/uview/example/fl.png",
+				"text": "分类"
 			},
 			{
 				"pagePath": "pages/center/index",

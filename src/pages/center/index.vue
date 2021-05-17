@@ -85,11 +85,14 @@ export default class index extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style>
+/* page不能写带scope的style标签中，否则无效 */
 page {
-  background-color: #ededed;
+  background-color: rgb(240, 240, 240);
 }
+</style>
 
+<style lang="scss">
 .user-box {
   background-color: #fff;
 }
