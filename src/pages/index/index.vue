@@ -5,7 +5,7 @@
       <Header :options="options">
         <template #query>
           <view style="padding: 6px">
-            <view class="">
+            <!-- <view class="">
               <u-input
                 v-model="value"
                 :type="type"
@@ -17,7 +17,7 @@
                 v-model="show"
                 @click="actionSheetCallback"
               ></u-action-sheet>
-            </view>
+            </view> -->
             <!-- <u-tabs
               inactive-color="white"
               active-color="#8A2BE2"
@@ -137,7 +137,7 @@ export default class index extends Vue {
   //返回顶部样式自定义
   iconStyle = {
     fontSize: "40rpx",
-    color: "#FE4365",
+    color: "black",
   };
   //返回顶部
   onPageScroll(e: any) {
@@ -173,15 +173,15 @@ export default class index extends Vue {
   list2 = [
     {
       image:
-        "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2542710983,3406835393&fm=26&gp=0.jpg",
+        "https://img9.51tietu.net/pic/2019-091217/rls2dzopdklrls2dzopdkl.jpg",
       title: "昨夜星辰昨夜风，画楼西畔桂堂东",
     },
     {
-      image: "https://cdn.uviewui.com/uview/swiper/2.jpg",
+      image: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg9.51tietu.net%2Fpic%2F2019-091115%2F3fdbunbgvna3fdbunbgvna.jpg&refer=http%3A%2F%2Fimg9.51tietu.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1623858420&t=e90fae35783817231e6dfa5d70cbc9a7",
       title: "身无彩凤双飞翼，心有灵犀一点通",
     },
     {
-      image: "https://cdn.uviewui.com/uview/swiper/3.jpg",
+      image: "https://img9.51tietu.net/pic/2019-091408/0ml21upwzut0ml21upwzut.jpg",
       title: "谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳",
     },
   ];
@@ -270,7 +270,7 @@ page {
   display: flex;
   margin-top: 5px;
   position: absolute;
-  top: 9rpx;
+  top: 6rpx;
 }
 
 // .demo-title {

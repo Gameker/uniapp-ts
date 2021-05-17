@@ -3,7 +3,6 @@
     <u-tag
       :bg-color="Bgcolor"
       :text="typeName"
-      size="mini"
       mode="dark"
       shape="circleRight"
     />
@@ -13,10 +12,10 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator"
 enum Color {
-  YJ = "rgba(244,244, 245, 0.3)",
-  LL = "rgba(244,244, 245, 0.3)",
-  DXS = "rgba(244,244, 245, 0.3)",
-  MT = "rgba(244,244, 245, 0.3)",
+  YJ = "rgba(0,0, 0, 0.3)",
+  LL = "rgba(0,0, 0, 0.3)",
+  DXS = "rgba(0,0, 0, 0.3)",
+  MT = "rgba(0,0, 0, 0.3)",
 }
 @Component
 export default class index extends Vue {
