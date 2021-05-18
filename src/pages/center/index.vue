@@ -92,7 +92,7 @@ page {
 }
 </style>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .user-box {
   background-color: #fff;
 }
