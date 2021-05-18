@@ -72,8 +72,8 @@ import Tag from "@/components/tag.vue";
 export default class index extends Vue {
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
-    title: "hhh",
-    isBback:true
+    title: "",
+    isBback: true,
     // border: true,
   };
   // =======================================================
@@ -130,8 +130,10 @@ export default class index extends Vue {
   }
   // =======================================================
   //onLoad事件
-  onLoad() {
+  onLoad(option: any) {
+    this.options.title = option.type;
     this.getData();
+    console.log(option); //打印出上个页面传递的参数。
   }
   // =======================================================
   //下拉刷新

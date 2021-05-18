@@ -6,7 +6,7 @@
     </view>
     <!-- 内容 -->
     <view class="main">
-      <view class="type" v-for="i in 5" :key="i" @click="details">
+      <view class="type" v-for="i in 5" :key="i" @click="details()">
         <image
           class="type-img"
           src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2579971333,403380026&fm=26&gp=0.jpg"
@@ -33,8 +33,7 @@ export default class index extends Vue {
   };
   details() {
     this.$u.route("pages/girls/details", {
-      name: "lisa",
-      age: 20,
+      type: "lisa",
     });
   }
   //onLoad事件
