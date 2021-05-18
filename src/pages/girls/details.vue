@@ -19,7 +19,7 @@
               <u-lazy-load
                 threshold="-120"
                 border-radius="10"
-                loading-img="/static/load.gif"
+                loading-img="/static/ol.gif"
                 error-img="/static/404.jpg"
                 :image="item.url"
                 :index="index"
@@ -40,7 +40,7 @@
                 border-radius="10"
                 :image="item.url"
                 :index="index"
-                loading-img="/static/load.gif"
+                loading-img="/static/ol.gif"
                 error-img="/static/404.jpg"
               ></u-lazy-load>
               <!-- 左上角标签 -->
