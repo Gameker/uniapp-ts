@@ -1,13 +1,18 @@
 <template>
   <view class="content">
     <!-- 头部 -->
-    <view class="header">
-      <Header :options="options"></Header>
+    <view class="user-box">
+      <!-- <Header :options="options"></Header> -->
+      <h3 style="padding: 35rpx 0 20rpx 35rpx">我的</h3>
     </view>
     <!-- 内容 -->
     <view class="main">
-      <view class="u-flex user-box u-p-l-30 u-p-r-20 u-p-b-30">
-        <view class="u-m-r-10">
+      <view class="u-flex user-box u-p-30">
+        <image
+          class="banner_img"
+          src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=353433341,2564518283&fm=26&gp=0.jpg"
+        ></image>
+        <!-- <view class="u-m-r-10">
           <u-avatar
             :src="pic"
             size="140"
@@ -30,7 +35,7 @@
         </view>
         <view class="u-m-l-10 u-p-10">
           <u-icon name="arrow-right" color="#969799" size="28"></u-icon>
-        </view>
+        </view> -->
       </view>
 
       <view class="u-m-t-20">
@@ -64,9 +69,9 @@ import Header from "@/components/header.vue";
 export default class index extends Vue {
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
-    background: {
-      backgroundColor: "white",
-    },
+    // background: {
+    //   backgroundColor: "white",
+    // },
   };
   pic: string = "/static/1.jpg";
   show: boolean = true;
@@ -85,5 +90,10 @@ page {
 <style lang="scss" scoped>
 .user-box {
   background-color: #fff;
+}
+.banner_img {
+  width: 100%;
+  height: 300rpx;
+  border-radius: 30rpx;
 }
 </style>
