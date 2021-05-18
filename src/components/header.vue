@@ -4,7 +4,8 @@
       :border-bottom="options.border || false"
       :height="options.height || '50'"
       :title-color="options.color || 'white'"
-      :is-back="false"
+      :is-back="options.isBback || false"
+      back-icon-color="white"
       :background="options.background || background"
       :title="options.title"
     >
