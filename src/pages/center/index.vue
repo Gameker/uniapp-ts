@@ -35,22 +35,22 @@
 
       <view class="u-m-t-20">
         <u-cell-group>
-          <u-cell-item icon="rmb-circle" title="支付"></u-cell-item>
+          <u-cell-item icon="rmb-circle" title="赞赏"></u-cell-item>
         </u-cell-group>
       </view>
 
       <view class="u-m-t-20">
         <u-cell-group>
-          <u-cell-item icon="star" title="收藏"></u-cell-item>
-          <u-cell-item icon="photo" title="相册"></u-cell-item>
-          <u-cell-item icon="coupon" title="卡券"></u-cell-item>
-          <u-cell-item icon="heart" title="关注"></u-cell-item>
+          <u-cell-item icon="star" title="介绍"></u-cell-item>
+          <u-cell-item icon="coupon" title="留言"></u-cell-item>
+          <u-cell-item icon="phone" title="联系"></u-cell-item>
+          <u-cell-item icon="heart" title="免责声明"></u-cell-item>
         </u-cell-group>
       </view>
 
       <view class="u-m-t-20">
         <u-cell-group>
-          <u-cell-item icon="setting" title="设置"></u-cell-item>
+          <u-cell-item icon="setting" title="更多"></u-cell-item>
         </u-cell-group>
       </view>
     </view>
@@ -70,18 +70,8 @@ export default class index extends Vue {
   };
   pic: string = "/static/1.jpg";
   show: boolean = true;
-  async getSwiper() {
-    let params = {
-      KeyboardEvent: "1111",
-      dataType: "json",
-    };
-    const res = await this.$ajax.center.getSwiper({ ...params });
-    console.log(res, 222);
-  }
   //onLoad事件
-  onShow() {
-    this.getSwiper();
-  }
+  onShow() {}
 }
 </script>
 
