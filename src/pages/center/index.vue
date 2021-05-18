@@ -2,15 +2,14 @@
   <view class="content">
     <!-- 头部 -->
     <view class="user-box">
-      <!-- <Header :options="options"></Header> -->
-      <h3 style="padding: 35rpx 0 20rpx 35rpx">我的</h3>
+      <Header :options="options"></Header>
     </view>
     <!-- 内容 -->
     <view class="main">
       <view class="u-flex user-box u-p-30">
         <image
           class="banner_img"
-          src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=353433341,2564518283&fm=26&gp=0.jpg"
+          src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fd.zdqx.com%2Fbaisi_20190703%2F011.jpg&refer=http%3A%2F%2Fd.zdqx.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1623946413&t=63698fa0664f8de5983ef70497022a7a"
         ></image>
         <!-- <view class="u-m-r-10">
           <u-avatar
@@ -69,6 +68,7 @@ import Header from "@/components/header.vue";
 export default class index extends Vue {
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
+    title:'我的 个人中心'
     // background: {
     //   backgroundColor: "white",
     // },
@@ -93,7 +93,7 @@ page {
 }
 .banner_img {
   width: 100%;
-  height: 300rpx;
+  height: 350rpx;
   border-radius: 30rpx;
 }
 </style>

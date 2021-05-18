@@ -6,11 +6,13 @@
     </view>
     <!-- 内容 -->
     <view class="main">
-      <view class="type" v-for="item in list" :key="item.id" @click="details(item.type)">
-        <image
-          class="type-img"
-          :src="item.url"
-        ></image>
+      <view
+        class="type"
+        v-for="item in list"
+        :key="item.id"
+        @click="details(item.type, item.title)"
+      >
+        <image class="type-img" :src="item.url"></image>
         <u-section
           :title="item.title"
           sub-title="查看更多"
@@ -22,29 +24,30 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import Header from "@/components/header.vue";
+import { Component, Vue } from "vue-property-decorator"
+import Header from "@/components/header.vue"
 
 @Component({ components: { Header } })
 export default class index extends Vue {
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
     title: "推荐 精选分类",
-  };
-  details(title) {
-    this.$u.route("pages/girls/details", {
-      type: "lisa",
-    });
   }
-  list: any = [];
+  details(type: number, title: string) {
+    this.$u.route("pages/girls/details", {
+      type: type,
+      title: title,
+    })
+  }
+  list: any = []
   async getData() {
-    const res: any = await this.$ajax.girls.getData({});
-    this.list = res.data;
-    console.log(res);
+    const res: any = await this.$ajax.girls.getData({})
+    this.list = res.data
+    console.log(res)
   }
   //onLoad事件
   onShow() {
-    this.getData();
+    this.getData()
   }
 }
 </script>
