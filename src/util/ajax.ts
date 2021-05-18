@@ -1,19 +1,16 @@
 import Vue from 'vue';
 import * as index from '@/api/index'
 import * as girls from '@/api/girls'
-import * as center from '@/api/girls'
+import * as center from '@/api/center'
 
 export const ajax = {
     index: {
         getData: index.getData,
-        reset: index.reset
     },
     girls: {
-        getSwiper: girls.getSwiper,
-        reset: girls.reset
+        getData: girls.getData,
     },
     center: {
-        getSwiper: center.getSwiper,
         reset: center.reset
     },
 

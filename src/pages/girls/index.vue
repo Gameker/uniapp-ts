@@ -6,13 +6,13 @@
     </view>
     <!-- 内容 -->
     <view class="main">
-      <view class="type" v-for="i in 5" :key="i" @click="details()">
+      <view class="type" v-for="item in list" :key="item.id" @click="details(item.type)">
         <image
           class="type-img"
-          src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2579971333,403380026&fm=26&gp=0.jpg"
+          :src="item.url"
         ></image>
         <u-section
-          title="今日热门"
+          :title="item.title"
           sub-title="查看更多"
           :show-line="false"
         ></u-section>
@@ -31,13 +31,21 @@ export default class index extends Vue {
   options: any = {
     title: "推荐 精选分类",
   };
-  details() {
+  details(title) {
     this.$u.route("pages/girls/details", {
       type: "lisa",
     });
   }
+  list: any = [];
+  async getData() {
+    const res: any = await this.$ajax.girls.getData({});
+    this.list = res.data;
+    console.log(res);
+  }
   //onLoad事件
-  onShow() {}
+  onShow() {
+    this.getData();
+  }
 }
 </script>
 <style>
