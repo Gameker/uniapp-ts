@@ -25,7 +25,7 @@
                 :index="index"
               ></u-lazy-load>
               <!-- 左上角标签 -->
-              <view class="demo-tag"><Tag :type="item.type" /></view>
+              <!-- <view class="demo-tag"><Tag :type="item.type" /></view> -->
             </view>
           </template>
           <template v-slot:right="{ rightList }">
@@ -44,7 +44,7 @@
                 error-img="/static/404.jpg"
               ></u-lazy-load>
               <!-- 左上角标签 -->
-              <view class="demo-tag"><Tag :type="item.type" /></view>
+              <!-- <view class="demo-tag"><Tag :type="item.type" /></view> -->
             </view>
           </template>
         </u-waterfall>
@@ -70,7 +70,7 @@ import Header from "@/components/header.vue"
 import Tag from "@/components/tag.vue"
 @Component({ components: { Header, Tag } })
 export default class index extends Vue {
-  type: number = 0
+  group_id: number = 0
   //头部组件参数，还有：height，color，background:{}等可选
   options: any = {
     title: "",
@@ -107,9 +107,9 @@ export default class index extends Vue {
   async getData() {
     let that = this
     const that_index = that.index
-    const res: any = await this.$ajax.girls.types({
+    const res: any = await this.$ajax.index.albums({
       page: { index: this.index },
-      type: this.type,
+      group_id: this.group_id,
     })
     //解决数组连接问题
     if (res != null && res.data.length > 0) {
@@ -133,8 +133,8 @@ export default class index extends Vue {
   // =======================================================
   //onLoad事件
   onLoad(option: any) {
-    this.type = option.type
-    this.options.title = option.title
+    this.group_id = option.group_id
+    this.options.title = option.desc
     this.getData()
     console.log(option) //打印出上个页面传递的参数。
   }

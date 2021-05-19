@@ -6,9 +6,11 @@ import * as center from '@/api/center'
 export const ajax = {
     index: {
         getData: index.getData,
+        albums: index.getData
     },
     girls: {
         getData: girls.getData,
+        types:girls.getData
     },
     center: {
         reset: center.reset

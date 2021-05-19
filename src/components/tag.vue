@@ -37,18 +37,19 @@ export default class index extends Vue {
   }
 
   get typeName() {
-    switch (this.type) {
-      case 1:
-        return "白皙幼滑"
-      case 2:
-        return "萝莉"
-      case 3:
-        return "白皙幼滑"
-      case 4:
-        return "模特"
-      default:
-        return "其他"
-    }
+    return this.type? this.type: '其他'
+  //   switch (this.type) {
+  //     case 1:
+  //       return "白皙幼滑"
+  //     case 2:
+  //       return "萝莉"
+  //     case 3:
+  //       return "白皙幼滑"
+  //     case 4:
+  //       return "模特"
+  //     default:
+  //       return "其他"
+  //   }
   }
 }
 </script>

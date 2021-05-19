@@ -51,7 +51,7 @@
               class="demo-warter"
               v-for="(item, index) in leftList"
               :key="index"
-              @tap="previewImage(item.url)"
+              @tap="details(item.group_id, item.desc)"
             >
               <u-lazy-load
                 threshold="-120"
@@ -62,7 +62,7 @@
                 :index="index"
               ></u-lazy-load>
               <!-- 左上角标签 -->
-              <view class="demo-tag"><Tag :type="item.type" /></view>
+              <view class="demo-tag"><Tag :type="item.desc" /></view>
             </view>
           </template>
           <template v-slot:right="{ rightList }">
@@ -70,7 +70,7 @@
               class="demo-warter"
               v-for="(item, index) in rightList"
               :key="index"
-              @tap="previewImage(item.url)"
+              @tap="details(item.group_id, item.desc)"
             >
               <u-lazy-load
                 threshold="-120"
@@ -81,7 +81,7 @@
                 error-img="/static/404.jpg"
               ></u-lazy-load>
               <!-- 左上角标签 -->
-              <view class="demo-tag"><Tag :type="item.type" /></view>
+              <view class="demo-tag"><Tag :type="item.desc" /></view>
             </view>
           </template>
         </u-waterfall>
@@ -191,11 +191,11 @@ export default class index extends Vue {
   flowList: any = [];
   list: any = [];
   // =======================================================
-  //预览图片
-  previewImage(url: string) {
-    uni.previewImage({
-      urls: [url],
-    });
+  details(group_id: number, desc: string) {
+    this.$u.route("pages/index/album", {
+      group_id: group_id,
+      desc: desc,
+    })
   }
   // =======================================================
   index: number = 1;

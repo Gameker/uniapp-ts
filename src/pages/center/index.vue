@@ -9,7 +9,7 @@
       <view class="u-flex user-box u-p-30">
         <image
           class="banner_img"
-          src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fd.zdqx.com%2Fbaisi_20190703%2F011.jpg&refer=http%3A%2F%2Fd.zdqx.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1623946413&t=63698fa0664f8de5983ef70497022a7a"
+          src="https://img9.51tietu.net/pic/2019-091217/rls2dzopdklrls2dzopdkl.jpg"
         ></image>
         <!-- <view class="u-m-r-10">
           <u-avatar
@@ -93,7 +93,7 @@ page {
 }
 .banner_img {
   width: 100%;
-  height: 350rpx;
+  height: 380rpx;
   border-radius: 30rpx;
 }
 </style>
