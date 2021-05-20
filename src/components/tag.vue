@@ -19,37 +19,38 @@ enum Color {
 }
 @Component
 export default class index extends Vue {
-  @Prop({ type: Number, default: () => 0 }) type!: number
+  @Prop({ type: String, default: () => 0 }) type!: string
 
   get Bgcolor() {
-    switch (this.type) {
-      case 1:
-        return Color.YJ
-      case 2:
-        return Color.LL
-      case 3:
-        return Color.DXS
-      case 4:
-        return Color.MT
-      default:
-        return "rgba(0,0, 0, 0.3)"
-    }
+    // switch (this.type) {
+    //   case 1:
+    //     return Color.YJ
+    //   case 2:
+    //     return Color.LL
+    //   case 3:
+    //     return Color.DXS
+    //   case 4:
+    //     return Color.MT
+    //   default:
+    //     return "rgba(0,0, 0, 0.3)"
+    // }
+    return "rgba(0,0, 0, 0.3)"
   }
 
   get typeName() {
-    return this.type? this.type: '其他'
-  //   switch (this.type) {
-  //     case 1:
-  //       return "白皙幼滑"
-  //     case 2:
-  //       return "萝莉"
-  //     case 3:
-  //       return "白皙幼滑"
-  //     case 4:
-  //       return "模特"
-  //     default:
-  //       return "其他"
-  //   }
+    return this.type ? this.type : "其他"
+    //   switch (this.type) {
+    //     case 1:
+    //       return "白皙幼滑"
+    //     case 2:
+    //       return "萝莉"
+    //     case 3:
+    //       return "白皙幼滑"
+    //     case 4:
+    //       return "模特"
+    //     default:
+    //       return "其他"
+    //   }
   }
 }
 </script>
