@@ -62,7 +62,7 @@
                 :index="index"
               ></u-lazy-load>
               <!-- 左上角标签 -->
-              <!-- <view class="demo-tag"><Tag :type="item.desc" /></view> -->
+              <view class="demo-tag"><Tag :type="item.desc" /></view>
             </view>
           </template>
           <template v-slot:right="{ rightList }">
@@ -81,7 +81,7 @@
                 error-img="/static/404.jpg"
               ></u-lazy-load>
               <!-- 左上角标签 -->
-              <!-- <view class="demo-tag"><Tag :type="item.desc" /></view> -->
+              <view class="demo-tag"><Tag :type="item.desc" /></view>
             </view>
           </template>
         </u-waterfall>

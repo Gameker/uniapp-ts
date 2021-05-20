@@ -24,8 +24,6 @@
                 :image="item.url"
                 :index="index"
               ></u-lazy-load>
-              <!-- 左上角标签 -->
-              <view class="demo-tag"><Tag :type="item.type" /></view>
             </view>
           </template>
           <template v-slot:right="{ rightList }">
@@ -43,8 +41,6 @@
                 loading-img="/static/ol.gif"
                 error-img="/static/404.jpg"
               ></u-lazy-load>
-              <!-- 左上角标签 -->
-              <view class="demo-tag"><Tag :type="item.type" /></view>
             </view>
           </template>
         </u-waterfall>

@@ -13,7 +13,7 @@ export const ajax = {
         types:girls.getData
     },
     center: {
-        reset: center.reset
+        msg: center.msg
     },
 
 }
