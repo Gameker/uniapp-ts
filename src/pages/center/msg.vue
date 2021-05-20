@@ -28,7 +28,8 @@
       </u-form>
       <u-button type="primary" @click="submit">提交</u-button>
     </view>
-    <u-top-tips ref="uTips"></u-top-tips>
+    <!-- <u-top-tips ref="uTips" z-index='9999'></u-top-tips> -->
+    <u-toast ref="uTips" />
   </view>
 </template>
 <script lang="ts">
@@ -72,6 +73,7 @@ export default class index extends Vue {
               title: "添加成功",
               type: "success",
               duration: "2300",
+              position: "top",
             })
             this.form = {
               msg: "",
@@ -83,6 +85,7 @@ export default class index extends Vue {
               title: "添加失败,请联系作者！",
               type: "error",
               duration: "2300",
+              position: "top",
             })
           })
       } else {
