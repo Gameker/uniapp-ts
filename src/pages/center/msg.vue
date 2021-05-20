@@ -9,11 +9,11 @@
       <u-form :model="form" ref="uForm">
         <u-form-item prop="msg">
           <u-input
-            placeholder="请输入评论内容"
+            placeholder="请输入留言内容"
             v-model="form.msg"
             type="textarea"
             :border="true"
-            height="170"
+            height="320"
             :auto-height="true"
             maxlength="200"
           />
@@ -109,9 +109,6 @@ page {
   h3 {
     padding: 25rpx 15rpx;
     font-weight: bold;
-  }
-  p {
-    line-height: 2;
   }
 }
 </style>
